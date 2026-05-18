@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Live Code Editor</title>
+
+<style>
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  font-family: Arial;
+}
+
+textarea {
+  width: 50%;
+  padding: 15px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background: #111827;
+  color: white;
+}
+
+iframe {
+  width: 50%;
+  border: none;
+}
+</style>
+</head>
+
+<body>
+
+<textarea id="code">
+<h1>Salom 👋</h1>
+<p>Bu live code editor</p>
+
+<style>
+body { font-family: Arial; color: blue; }
+</style>
+</textarea>
+
+<iframe id="preview"></iframe>
+
+<script>
+const code = document.getElementById("code");
+const preview = document.getElementById("preview");
+
+function update() {
+  preview.srcdoc = code.value;
+}
+
+code.addEventListener("input", update);
+
+update();
+</script>
+
+</body>
+</html>
